@@ -159,6 +159,16 @@ int main()
 
     int opcao = 0;
     int loop = 1;
+    char password[] = "a";
+    int retorno;
+
+    printf("###Cartório da EBAC###\n\n");
+    printf("Login Administrador!\n\nDigite a senha: ");
+    scanf("%s", &password);
+    retorno = strcmp(password, "admin");
+
+    if(retorno == 0)
+    {
 
         for(loop = 1; loop = 1;)
         {
@@ -174,6 +184,7 @@ int main()
             printf("\t1 - Registrar novo cliente\n");
             printf("\t2 - Consultar nome de cliente\n");
             printf("\t3 - Deletar cliente\n");
+            printf("\t4 - Sair do Sistema\n\n");
             printf("Opção:");
 
 //Fim do menu.
@@ -196,6 +207,12 @@ int main()
             deletar();
             break;
 
+            case 4:
+            printf("Obrigado por usar o sistema!\n");
+            return 0;
+            break;
+
+
             default:
             printf("Esta opção não está disponível\n\n");
             system("pause");
@@ -204,6 +221,9 @@ int main()
 
 //Fim do submenu.
         }
+    }
 
+    else
+        printf("Senha incorreta!");
 }
 
